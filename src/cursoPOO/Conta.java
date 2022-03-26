@@ -11,6 +11,13 @@ public class Conta {
         this.setSaldo(0.0);
         this.setStatus(false);
     }
+    public void Extrato(){
+        System.out.println("Nome: " + this.getDono());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Numero: " + this.getNumConta());
+        System.out.println("Status: " + this.getStatus());
+        System.out.println("Saldo: " + this.getSaldo());
+    }
 
     public void abrirConta(String t){
         this.setTipo(t);
@@ -39,7 +46,7 @@ public class Conta {
         
     }
 
-    public void sacar(int v){
+    public void sacar(Double v){
         if(this.status = true){
             if(this.getSaldo() >= v){
                 this.setSaldo(this.getSaldo() - v);
@@ -54,7 +61,7 @@ public class Conta {
         
     }
 
-    public void depositar(int v){
+    public void depositar(Double v){
         if(this.getStatus() == true){
             this.setSaldo(this.getSaldo() + v);
         }
@@ -92,8 +99,6 @@ public class Conta {
         }
 
     }
-
-    
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
