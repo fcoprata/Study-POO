@@ -1,4 +1,4 @@
-package teste;
+package cursoPOO;
 
 public class Conta {
     public int numConta;
@@ -22,22 +22,16 @@ public class Conta {
     }
 
     public void fecharConta(){
-        if(status == true){
-            if(saldo == 0){
-                status = false;
-            }
-            else if(saldo > 0){
-                this.sacar();
-                status = false;
-            }
-            else if(saldo < 0){
-                System.out.println("Error, você tem um débito");
-            }
-            
+        if(saldo == 0){
+            setStatus(false);
+        }
+        else if(saldo > 0){
+            sacar();
         }
     }
 
     public void sacar(){
+        getSaldo();
         
     }
 
