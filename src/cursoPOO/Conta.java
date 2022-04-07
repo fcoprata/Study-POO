@@ -4,11 +4,11 @@ public class Conta {
     public int numConta;
     protected String tipo;
     private String dono;
-    private Double saldo;
+    private int saldo;
     private boolean status;
     
     public Conta(){
-        this.setSaldo(0.0);
+        this.setSaldo(0);
         this.setStatus(false);
     }
     public void Extrato(){
@@ -23,10 +23,10 @@ public class Conta {
         this.setTipo(t);
         this.setStatus(true);
         if(t == "CC"){
-            this.setSaldo(50.0);
+            this.setSaldo(50);
         }
         else if(t == "CP"){
-            this.setSaldo(150.0);
+            this.setSaldo(150);
         }
         else{
             System.out.println("Error");
@@ -46,7 +46,7 @@ public class Conta {
         
     }
 
-    public void sacar(Double v){
+    public void sacar(int v){
         if(this.status = true){
             if(this.getSaldo() >= v){
                 this.setSaldo(this.getSaldo() - v);
@@ -61,7 +61,7 @@ public class Conta {
         
     }
 
-    public void depositar(Double v){
+    public void depositar(int v){
         if(this.getStatus() == true){
             this.setSaldo(this.getSaldo() + v);
         }
@@ -99,35 +99,26 @@ public class Conta {
         }
 
     }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public String getTipo() {
-        return this.tipo;
-    }
     public String getDono() {
-        return this.dono;
-    }
-    public void setDono(String dono) {
+        return dono;
+    }public int getNumConta() {
+        return numConta;
+    }public int getSaldo() {
+        return saldo;
+    }public String getTipo() {
+        return tipo;
+    }public boolean getStatus() {
+        return status;
+    }public void setDono(String dono) {
         this.dono = dono;
-    }
-    public int getNumConta() {
-        return this.numConta;
-    }
-    public void setNumConta(int numConta) {
+    }public void setNumConta(int numConta) {
         this.numConta = numConta;
-    }
-    public Double getSaldo() {
-        return this.saldo;
-    }
-    public void setSaldo(Double saldo) {
+    }public void setSaldo(int saldo) {
         this.saldo = saldo;
-    }
-    public boolean getStatus() {
-        return this.status;
-    }
-    public void setStatus(boolean status) {
+    }public void setStatus(boolean status) {
         this.status = status;
+    }public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
 }
